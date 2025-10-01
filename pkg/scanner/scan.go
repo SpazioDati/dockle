@@ -11,9 +11,9 @@ import (
 	"github.com/goodwithtech/deckoder/extractor/docker"
 	deckodertypes "github.com/goodwithtech/deckoder/types"
 
-	"github.com/goodwithtech/dockle/pkg/types"
+	"github.com/SpazioDati/dockle/pkg/types"
 
-	"github.com/goodwithtech/dockle/pkg/assessor"
+	"github.com/SpazioDati/dockle/pkg/assessor"
 )
 
 var (

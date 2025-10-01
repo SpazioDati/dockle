@@ -5,7 +5,7 @@
         {
             "tool": {
                 "driver": {
-                    "informationUri": "https://github.com/goodwithtech/dockle",
+                    "informationUri": "https://github.com/SpazioDati/dockle",
                     "name": "Dockle",
                     "rules": [
                         {
@@ -14,7 +14,7 @@
                             "shortDescription": {
                                 "text": "Avoid latest tag"
                             },
-                            "helpUri": "https://github.com/goodwithtech/dockle/blob/master/CHECKPOINT.md#DKL-DI-0006"
+                            "helpUri": "https://github.com/SpazioDati/dockle/blob/master/CHECKPOINT.md#DKL-DI-0006"
                         }
                     ]
                 }

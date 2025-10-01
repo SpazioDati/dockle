@@ -5,20 +5,20 @@ import (
 
 	deckodertypes "github.com/goodwithtech/deckoder/types"
 
-	"github.com/goodwithtech/dockle/pkg/assessor/cache"
-	"github.com/goodwithtech/dockle/pkg/assessor/privilege"
+	"github.com/SpazioDati/dockle/pkg/assessor/cache"
+	"github.com/SpazioDati/dockle/pkg/assessor/privilege"
 
-	"github.com/goodwithtech/dockle/pkg/assessor/contentTrust"
-	"github.com/goodwithtech/dockle/pkg/assessor/credential"
-	"github.com/goodwithtech/dockle/pkg/assessor/hosts"
+	"github.com/SpazioDati/dockle/pkg/assessor/contentTrust"
+	"github.com/SpazioDati/dockle/pkg/assessor/credential"
+	"github.com/SpazioDati/dockle/pkg/assessor/hosts"
 
-	"github.com/goodwithtech/dockle/pkg/assessor/group"
-	"github.com/goodwithtech/dockle/pkg/assessor/manifest"
-	"github.com/goodwithtech/dockle/pkg/assessor/passwd"
-	"github.com/goodwithtech/dockle/pkg/assessor/user"
+	"github.com/SpazioDati/dockle/pkg/assessor/group"
+	"github.com/SpazioDati/dockle/pkg/assessor/manifest"
+	"github.com/SpazioDati/dockle/pkg/assessor/passwd"
+	"github.com/SpazioDati/dockle/pkg/assessor/user"
 
-	"github.com/goodwithtech/dockle/pkg/log"
-	"github.com/goodwithtech/dockle/pkg/types"
+	"github.com/SpazioDati/dockle/pkg/log"
+	"github.com/SpazioDati/dockle/pkg/types"
 )
 
 var assessors []Assessor

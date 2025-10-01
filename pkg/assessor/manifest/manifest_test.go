@@ -7,8 +7,8 @@ import (
 	"sort"
 	"testing"
 
+	"github.com/SpazioDati/dockle/pkg/types"
 	"github.com/d4l3k/messagediff"
-	"github.com/goodwithtech/dockle/pkg/types"
 )
 
 func TestAssess(t *testing.T) {

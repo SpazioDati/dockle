@@ -5,20 +5,20 @@ import (
 	"fmt"
 	"io"
 
-	"github.com/goodwithtech/dockle/config"
+	"github.com/SpazioDati/dockle/config"
 
-	"github.com/goodwithtech/dockle/pkg/types"
+	"github.com/SpazioDati/dockle/pkg/types"
 )
 
 type JsonWriter struct {
 	ImageName string
-	Output io.Writer
+	Output    io.Writer
 }
 
 type JsonOutputFormat struct {
-	ImageName string `json:"image,omitempty"`
-	Summary JsonSummary   `json:"summary"`
-	Details []*JsonDetail `json:"details"`
+	ImageName string        `json:"image,omitempty"`
+	Summary   JsonSummary   `json:"summary"`
+	Details   []*JsonDetail `json:"details"`
 }
 type JsonSummary struct {
 	Fatal int `json:"fatal"`
@@ -66,8 +66,8 @@ func (jw JsonWriter) Write(assessMap types.AssessmentMap) (abend bool, err error
 	}
 	result := JsonOutputFormat{
 		ImageName: jw.ImageName,
-		Summary: jsonSummary,
-		Details: jsonDetails,
+		Summary:   jsonSummary,
+		Details:   jsonDetails,
 	}
 	output, err := json.MarshalIndent(result, "", "  ")
 	if err != nil {
