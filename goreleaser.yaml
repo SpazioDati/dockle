@@ -81,7 +81,6 @@ builds:
 
 dockers:
   - image_templates:
-      - 'SpazioDati/dockle:{{ .Tag }}-amd64'
       - 'ghcr.io/SpazioDati/dockle:{{ .Tag }}-amd64'
     dockerfile: Dockerfile.releaser
     build_flag_templates:
@@ -93,7 +92,6 @@ dockers:
       - "--label=org.opencontainers.image.source={{.GitURL}}"
       - "--platform=linux/amd64"
   - image_templates:
-      - 'SpazioDati/dockle:{{ .Tag }}-arm64'
       - 'ghcr.io/SpazioDati/dockle:{{ .Tag }}-arm64'
     dockerfile: Dockerfile.releaser
     build_flag_templates:
@@ -106,18 +104,10 @@ dockers:
       - "--platform=linux/arm64"
     goarch: arm64
 docker_manifests:
-  - name_template: 'SpazioDati/dockle:{{ .Tag }}'
-    image_templates:
-      - 'SpazioDati/dockle:{{ .Tag }}-amd64'
-      - 'SpazioDati/dockle:{{ .Tag }}-arm64'
   - name_template: 'ghcr.io/SpazioDati/dockle:{{ .Tag }}'
     image_templates:
       - 'ghcr.io/SpazioDati/dockle:{{ .Tag }}-amd64'
       - 'ghcr.io/SpazioDati/dockle:{{ .Tag }}-arm64'
-  - name_template: 'SpazioDati/dockle:latest'
-    image_templates:
-      - 'SpazioDati/dockle:{{ .Tag }}-amd64'
-      - 'SpazioDati/dockle:{{ .Tag }}-arm64'
   - name_template: 'ghcr.io/SpazioDati/dockle:latest'
     image_templates:
       - 'ghcr.io/SpazioDati/dockle:{{ .Tag }}-amd64'
