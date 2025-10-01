@@ -5,8 +5,8 @@ import (
 
 	deckodertypes "github.com/goodwithtech/deckoder/types"
 
-	"github.com/goodwithtech/dockle/pkg/log"
-	"github.com/goodwithtech/dockle/pkg/types"
+	"github.com/SpazioDati/dockle/pkg/log"
+	"github.com/SpazioDati/dockle/pkg/types"
 )
 
 var HostEnvironmentFileName = "ENVIRONMENT variable on HOST OS"

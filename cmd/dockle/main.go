@@ -1,10 +1,11 @@
 package main
 
 import (
-	"github.com/goodwithtech/dockle/pkg"
-	"github.com/goodwithtech/dockle/pkg/log"
 	l "log"
 	"os"
+
+	"github.com/SpazioDati/dockle/pkg"
+	"github.com/SpazioDati/dockle/pkg/log"
 )
 
 func main() {

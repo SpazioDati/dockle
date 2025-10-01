@@ -5,7 +5,7 @@
         {
             "tool": {
                 "driver": {
-                    "informationUri": "https://github.com/goodwithtech/dockle",
+                    "informationUri": "https://github.com/SpazioDati/dockle",
                     "name": "Dockle",
                     "rules": [
                         {
@@ -14,7 +14,7 @@
                             "shortDescription": {
                                 "text": "Do not store credential in environment variables/files"
                             },
-                            "helpUri": "https://github.com/goodwithtech/dockle/blob/master/CHECKPOINT.md#CIS-DI-0010"
+                            "helpUri": "https://github.com/SpazioDati/dockle/blob/master/CHECKPOINT.md#CIS-DI-0010"
                         }
                     ]
                 }

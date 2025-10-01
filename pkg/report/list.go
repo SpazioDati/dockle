@@ -4,10 +4,10 @@ import (
 	"fmt"
 	"io"
 
-	"github.com/goodwithtech/dockle/config"
+	"github.com/SpazioDati/dockle/config"
 
-	"github.com/goodwithtech/dockle/pkg/color"
-	"github.com/goodwithtech/dockle/pkg/types"
+	"github.com/SpazioDati/dockle/pkg/color"
+	"github.com/SpazioDati/dockle/pkg/types"
 )
 
 const (
@@ -28,7 +28,7 @@ var AlertLevelColors = map[int]color.Color{
 }
 
 type ListWriter struct {
-	Output io.Writer
+	Output  io.Writer
 	NoColor bool
 }
 

@@ -14,9 +14,9 @@ import (
 
 	"github.com/google/shlex"
 
-	"github.com/goodwithtech/dockle/pkg/log"
+	"github.com/SpazioDati/dockle/pkg/log"
 
-	"github.com/goodwithtech/dockle/pkg/types"
+	"github.com/SpazioDati/dockle/pkg/types"
 )
 
 type ManifestAssessor struct{}

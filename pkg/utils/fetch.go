@@ -7,7 +7,7 @@ import (
 	"regexp"
 	"time"
 
-	"github.com/goodwithtech/dockle/pkg/log"
+	"github.com/SpazioDati/dockle/pkg/log"
 )
 
 var versionPattern = regexp.MustCompile(`v[0-9]+\.[0-9]+\.[0-9]+`)
@@ -43,7 +43,7 @@ func FetchLatestVersion(ctx context.Context) (version string, err error) {
 	log.Logger.Debug("Fetch latest version from github")
 	body, err := fetchLocation(
 		ctx,
-		"https://github.com/goodwithtech/dockle/releases/latest",
+		"https://github.com/SpazioDati/dockle/releases/latest",
 		&http.Cookie{Name: "user_session", Value: "guard"},
 	)
 	if err != nil {
