@@ -12,10 +12,10 @@ import (
 
 	"github.com/google/go-cmp/cmp"
 
-	"github.com/goodwithtech/dockle/pkg/assessor/contentTrust"
-	"github.com/goodwithtech/dockle/pkg/assessor/manifest"
-	"github.com/goodwithtech/dockle/pkg/log"
-	"github.com/goodwithtech/dockle/pkg/types"
+	"github.com/SpazioDati/dockle/pkg/assessor/contentTrust"
+	"github.com/SpazioDati/dockle/pkg/assessor/manifest"
+	"github.com/SpazioDati/dockle/pkg/log"
+	"github.com/SpazioDati/dockle/pkg/types"
 )
 
 func TestScanImage(t *testing.T) {

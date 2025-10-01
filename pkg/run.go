@@ -8,23 +8,23 @@ import (
 	"os"
 	"strings"
 
-	"github.com/goodwithtech/dockle/pkg/assessor/credential"
-	"github.com/goodwithtech/dockle/pkg/assessor/manifest"
+	"github.com/SpazioDati/dockle/pkg/assessor/credential"
+	"github.com/SpazioDati/dockle/pkg/assessor/manifest"
 
 	"github.com/containers/image/v5/transports/alltransports"
 	deckodertypes "github.com/goodwithtech/deckoder/types"
 
-	"github.com/goodwithtech/dockle/config"
-	"github.com/goodwithtech/dockle/pkg/utils"
+	"github.com/SpazioDati/dockle/config"
+	"github.com/SpazioDati/dockle/pkg/utils"
 
-	"github.com/goodwithtech/dockle/pkg/report"
+	"github.com/SpazioDati/dockle/pkg/report"
 
-	"github.com/goodwithtech/dockle/pkg/scanner"
+	"github.com/SpazioDati/dockle/pkg/scanner"
 
 	"github.com/urfave/cli"
 
-	"github.com/goodwithtech/dockle/pkg/log"
-	"github.com/goodwithtech/dockle/pkg/types"
+	"github.com/SpazioDati/dockle/pkg/log"
+	"github.com/SpazioDati/dockle/pkg/types"
 )
 
 func Run(c *cli.Context) (err error) {

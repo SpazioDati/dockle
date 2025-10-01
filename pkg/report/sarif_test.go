@@ -8,7 +8,7 @@ import (
 
 	"github.com/google/go-cmp/cmp"
 
-	"github.com/goodwithtech/dockle/pkg/types"
+	"github.com/SpazioDati/dockle/pkg/types"
 )
 
 func TestSarifWriter_Write(t *testing.T) {

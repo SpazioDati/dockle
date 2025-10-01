@@ -3,8 +3,8 @@ package report
 import (
 	"sort"
 
-	"github.com/goodwithtech/dockle/config"
-	"github.com/goodwithtech/dockle/pkg/types"
+	"github.com/SpazioDati/dockle/config"
+	"github.com/SpazioDati/dockle/pkg/types"
 )
 
 var AlertLabels = map[int]string{

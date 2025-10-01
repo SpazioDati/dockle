@@ -7,8 +7,8 @@ import (
 
 	"github.com/owenrumney/go-sarif/v2/sarif"
 
-	"github.com/goodwithtech/dockle/config"
-	"github.com/goodwithtech/dockle/pkg/types"
+	"github.com/SpazioDati/dockle/config"
+	"github.com/SpazioDati/dockle/pkg/types"
 )
 
 type SarifWriter struct {
@@ -45,7 +45,7 @@ func (sw SarifWriter) Write(assessMap types.AssessmentMap) (abend bool, err erro
 	if err != nil {
 		return false, err
 	}
-	run := sarif.NewRunWithInformationURI("Dockle", "https://github.com/goodwithtech/dockle")
+	run := sarif.NewRunWithInformationURI("Dockle", "https://github.com/SpazioDati/dockle")
 	report.AddRun(run)
 	for _, r := range rules {
 		result := sarif.NewRuleResult(r.ruleID).
@@ -90,7 +90,7 @@ func sarifDetail(code string, level int, assessments []*types.Assessment) (jsonI
 		ruleID:          code,
 		severity:        sarifAlertLabels[level],
 		ruleDescription: types.TitleMap[code],
-		link:            fmt.Sprintf("https://github.com/goodwithtech/dockle/blob/master/CHECKPOINT.md#%s", code),
+		link:            fmt.Sprintf("https://github.com/SpazioDati/dockle/blob/master/CHECKPOINT.md#%s", code),
 		description:     strings.Join(alerts, ", "),
 		locations:       locations,
 	}

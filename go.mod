@@ -1,4 +1,4 @@
-module github.com/goodwithtech/dockle
+module github.com/SpazioDati/dockle
 
 go 1.22.10
 

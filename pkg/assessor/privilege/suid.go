@@ -6,7 +6,7 @@ import (
 
 	deckodertypes "github.com/goodwithtech/deckoder/types"
 
-	"github.com/goodwithtech/dockle/pkg/types"
+	"github.com/SpazioDati/dockle/pkg/types"
 )
 
 type PrivilegeAssessor struct{}
@@ -46,7 +46,7 @@ func (a PrivilegeAssessor) RequiredExtensions() []string {
 	return []string{}
 }
 
-//const GidMode os.FileMode = 4000
+// const GidMode os.FileMode = 4000
 func (a PrivilegeAssessor) RequiredPermissions() []os.FileMode {
 	return []os.FileMode{os.ModeSetgid, os.ModeSetuid}
 }

@@ -5,9 +5,9 @@ import (
 	"os"
 	"strings"
 
-	"github.com/goodwithtech/dockle/pkg/types"
+	"github.com/SpazioDati/dockle/pkg/types"
 
-	"github.com/goodwithtech/dockle/pkg/log"
+	"github.com/SpazioDati/dockle/pkg/log"
 	"github.com/urfave/cli"
 )
 

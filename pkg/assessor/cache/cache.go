@@ -9,8 +9,8 @@ import (
 	deckodertypes "github.com/goodwithtech/deckoder/types"
 	"github.com/goodwithtech/deckoder/utils"
 
-	"github.com/goodwithtech/dockle/pkg/log"
-	"github.com/goodwithtech/dockle/pkg/types"
+	"github.com/SpazioDati/dockle/pkg/log"
+	"github.com/SpazioDati/dockle/pkg/types"
 )
 
 var (
