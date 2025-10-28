@@ -5,6 +5,7 @@ import (
 	"context"
 	"os"
 	"path/filepath"
+	"strings"
 
 	"github.com/goodwithtech/deckoder/analyzer"
 	"github.com/goodwithtech/deckoder/extractor"
@@ -113,6 +114,14 @@ func createPathPermissionFilterFunc(filenames, extensions []string, permissions 
 		fileDirBase := filepath.Base(fileDir)
 		if _, ok := requiredDirNames[fileDirBase]; ok {
 			return true, nil
+		}
+
+		// Check if file is under any required directory (not just immediate parent)
+		for reqDir := range requiredDirNames {
+			// Check if the file path starts with the required directory
+			if strings.HasPrefix(filePath, reqDir+"/") {
+				return true, nil
+			}
 		}
 
 		fi := h.FileInfo()

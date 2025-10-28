@@ -32,7 +32,7 @@ func (a CacheAssessor) Assess(fileMap deckodertypes.FileMap) ([]*types.Assessmen
 		dirBase := filepath.Base(dirName)
 
 		// match Directory
-		if utils.StringInSlice(dirBase+"/", reqDirs) || utils.StringInSlice(dirName+"/", reqDirs) {
+		if utils.StringInSlice(dirBase+"/", reqDirs) || utils.StringInSlice(dirName+"/", reqDirs) || isUnderRootReqDir(dirName, reqDirs) {
 			if _, ok := detectedDir[dirName]; ok {
 				continue
 			}
@@ -77,8 +77,29 @@ func inIgnoreDir(filename string) bool {
 	return false
 }
 
+// isUnderRootReqDir checks if directory is under /root/ or root/ with a required directory
+func isUnderRootReqDir(dirName string, reqDirs []string) bool {
+	for _, dir := range reqDirs {
+		cleanDir := strings.TrimSuffix(dir, "/")
+		if strings.HasPrefix(dirName, "root/"+cleanDir) || strings.HasPrefix(dirName, "/root/"+cleanDir) {
+			return true
+		}
+	}
+	return false
+}
+
 func (a CacheAssessor) RequiredFiles() []string {
-	return append(reqFiles, reqDirs...)
+	result := append(reqFiles, reqDirs...)
+
+	// Add /root/ and root/ variants for directories only
+	// (tar files may or may not have leading slash)
+	// Files are already matched by their base name, so no need to add file variants
+	for _, dir := range reqDirs {
+		result = append(result, "/root/"+dir)
+		result = append(result, "root/"+dir)
+	}
+
+	return result
 }
 
 func (a CacheAssessor) RequiredExtensions() []string {
