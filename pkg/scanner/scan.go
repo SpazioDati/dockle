@@ -106,20 +106,11 @@ func createPathPermissionFilterFunc(filenames, extensions []string, permissions 
 			return true, nil
 		}
 
-		// Check with file directory name
-		fileDir := filepath.Dir(filePath)
-		if _, ok := requiredDirNames[fileDir]; ok {
-			return true, nil
-		}
-		fileDirBase := filepath.Base(fileDir)
-		if _, ok := requiredDirNames[fileDirBase]; ok {
-			return true, nil
-		}
-
-		// Check if file is under any required directory (not just immediate parent)
-		for reqDir := range requiredDirNames {
-			// Check if the file path starts with the required directory
-			if strings.HasPrefix(filePath, reqDir+"/") {
+		// Check if any directory component in the path matches a required directory
+		// This catches .cache/, .git/, etc. anywhere in the filesystem tree
+		parts := strings.Split(filePath, "/")
+		for _, part := range parts {
+			if _, ok := requiredDirNames[part]; ok {
 				return true, nil
 			}
 		}
