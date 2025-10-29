@@ -30,7 +30,7 @@ func TestAssess(t *testing.T) {
 				".cache/direct":                      {},
 			},
 			expectedCount: 5,
-			expectedFiles: []string{"root/.cache/pip/http-v2/1/2/3", "root/.aws", "/root/.git", "home/user/.npm", ".cache"},
+			expectedFiles: []string{"root/.cache", "root/.aws", "/root/.git", "home/user/.npm", ".cache"},
 		},
 		{
 			name: "detects required files by basename",
@@ -44,11 +44,11 @@ func TestAssess(t *testing.T) {
 			expectedFiles: []string{"root/Dockerfile", "app/docker-compose.yml", "home/.vimrc", "project/.DS_Store"},
 		},
 		{
-			name: "deduplicates directories with multiple files",
+			name: "reports only top-level suspicious directory once",
 			fileMap: deckodertypes.FileMap{
-				"root/.cache/file1": {},
-				"root/.cache/file2": {},
-				"root/.cache/file3": {},
+				"root/.cache/file1":                 {},
+				"root/.cache/pip/file2":             {},
+				"root/.cache/pip/http-v2/deep/file": {},
 			},
 			expectedCount: 1,
 			expectedFiles: []string{"root/.cache"},
