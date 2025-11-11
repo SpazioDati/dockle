@@ -5,6 +5,7 @@ import (
 	"context"
 	"os"
 	"path/filepath"
+	"strings"
 
 	"github.com/goodwithtech/deckoder/analyzer"
 	"github.com/goodwithtech/deckoder/extractor"
@@ -105,14 +106,13 @@ func createPathPermissionFilterFunc(filenames, extensions []string, permissions 
 			return true, nil
 		}
 
-		// Check with file directory name
-		fileDir := filepath.Dir(filePath)
-		if _, ok := requiredDirNames[fileDir]; ok {
-			return true, nil
-		}
-		fileDirBase := filepath.Base(fileDir)
-		if _, ok := requiredDirNames[fileDirBase]; ok {
-			return true, nil
+		// Check if any directory component in the path matches a required directory
+		// This catches .cache/, .git/, etc. anywhere in the filesystem tree
+		parts := strings.Split(filePath, "/")
+		for _, part := range parts {
+			if _, ok := requiredDirNames[part]; ok {
+				return true, nil
+			}
 		}
 
 		fi := h.FileInfo()
