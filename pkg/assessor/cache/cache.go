@@ -31,12 +31,29 @@ func (a CacheAssessor) Assess(fileMap deckodertypes.FileMap) ([]*types.Assessmen
 		dirName := filepath.Dir(filename)
 		dirBase := filepath.Base(dirName)
 
-		// match Directory
-		if utils.StringInSlice(dirBase+"/", reqDirs) || utils.StringInSlice(dirName+"/", reqDirs) {
-			if _, ok := detectedDir[dirName]; ok {
+		// match Directory - check if any component of the directory path matches a required dir
+		matched := utils.StringInSlice(dirBase+"/", reqDirs) || utils.StringInSlice(dirName+"/", reqDirs)
+		reportDir := dirName
+
+		if !matched {
+			// Check if any directory component in the path matches a required directory
+			// and find the top-level occurrence to report
+			parts := strings.Split(dirName, "/")
+			for i, part := range parts {
+				if utils.StringInSlice(part+"/", reqDirs) {
+					matched = true
+					// Report only up to and including the first required directory component
+					reportDir = strings.Join(parts[:i+1], "/")
+					break
+				}
+			}
+		}
+
+		if matched {
+			if _, ok := detectedDir[reportDir]; ok {
 				continue
 			}
-			detectedDir[dirName] = struct{}{}
+			detectedDir[reportDir] = struct{}{}
 
 			// Skip uncontrollable dependency directory e.g) npm : node_modules, php: composer
 			if inIgnoreDir(filename) {
@@ -47,8 +64,8 @@ func (a CacheAssessor) Assess(fileMap deckodertypes.FileMap) ([]*types.Assessmen
 				assesses,
 				&types.Assessment{
 					Code:     types.InfoDeletableFiles,
-					Filename: dirName,
-					Desc:     fmt.Sprintf("Suspicious directory : %s ", dirName),
+					Filename: reportDir,
+					Desc:     fmt.Sprintf("Suspicious directory : %s ", reportDir),
 				})
 
 		}
