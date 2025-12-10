@@ -3,7 +3,7 @@ package contentTrust
 import (
 	"os"
 
-	deckodertypes "github.com/goodwithtech/deckoder/types"
+	deckodertypes "github.com/SpazioDati/deckoder/types"
 
 	"github.com/SpazioDati/dockle/pkg/log"
 	"github.com/SpazioDati/dockle/pkg/types"

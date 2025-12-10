@@ -11,8 +11,8 @@ import (
 	"github.com/SpazioDati/dockle/pkg/assessor/credential"
 	"github.com/SpazioDati/dockle/pkg/assessor/manifest"
 
+	deckodertypes "github.com/SpazioDati/deckoder/types"
 	"github.com/containers/image/v5/transports/alltransports"
-	deckodertypes "github.com/goodwithtech/deckoder/types"
 
 	"github.com/SpazioDati/dockle/config"
 	"github.com/SpazioDati/dockle/pkg/utils"
@@ -63,6 +63,7 @@ func Run(c *cli.Context) (err error) {
 		Timeout:               c.Duration("timeout"),
 		UserName:              c.String("username"),
 		Password:              c.String("password"),
+		Platform:              c.String("platform"),
 		InsecureSkipTLSVerify: c.Bool("insecure"),
 		DockerDaemonHost:      getDockerSockPath(c),
 		DockerDaemonCertPath:  c.String("cert-path"),

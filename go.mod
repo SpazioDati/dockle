@@ -6,7 +6,7 @@ require (
 	github.com/containers/image/v5 v5.33.0
 	github.com/d4l3k/messagediff v1.2.2-0.20180726183240-b9e99b2f9263
 	github.com/docker/go-connections v0.5.0
-	github.com/goodwithtech/deckoder v0.0.6
+	github.com/SpazioDati/deckoder v0.0.0-20251210162543-d4be2a3142aa // TODO: to be updated after release
 	github.com/google/go-cmp v0.6.0
 	github.com/google/shlex v0.0.0-20191202100458-e7afc7fbc510
 	github.com/owenrumney/go-sarif/v2 v2.0.17

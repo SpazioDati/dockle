@@ -29,6 +29,8 @@ See [Installation](#installation) and [Common Examples](#common-examples)
 
 # TOC
 
+- [Checkpoints Comparison](#checkpoints-comparison)
+- [TOC](#toc)
 - [Features](#features)
 - [Comparison](#comparison)
 - [Installation](#installation)
@@ -46,25 +48,34 @@ See [Installation](#installation) and [Common Examples](#common-examples)
   - [Basic](#basic)
   - [Docker](#docker)
 - [Checkpoint Summary](#checkpoint-summary)
-- [Common Examples](#common-examples)
-  - [Scan an image](#scan-an-image)
-  - [Scan an image file](#scan-an-image-file)
-  - [Get or Save the results as JSON](#get-or-save-the-results-as-json)
-  - [Specify exit code](#specify-exit-code)
-  - [Specify exit level](#specify-exit-level)
-  - [Ignore the specified checkpoints](#ignore-the-specified-checkpoints)
-- [Continuous Integration](#continuous-integration-ci)
-  - [GitHub Action](#github-action)
-  - [Travis CI](#travis-ci)
-  - [CircleCI](#circleci)
+  - [Level](#level)
+  - [Common Examples](#common-examples)
+    - [Scan an image](#scan-an-image)
+    - [Scan an image file](#scan-an-image-file)
+    - [Get or Save the results as JSON](#get-or-save-the-results-as-json)
+    - [Get or Save the results as SARIF](#get-or-save-the-results-as-sarif)
+    - [Specify exit code](#specify-exit-code)
+    - [Specify exit level](#specify-exit-level)
+    - [Ignore the specified checkpoints](#ignore-the-specified-checkpoints)
+    - [Accept suspicious `environment variables` / `files` / `file extensions`](#accept-suspicious-environment-variables--files--file-extensions)
+    - [Reject suspicious `environment variables` / `files` / `file extensions`](#reject-suspicious-environment-variables--files--file-extensions)
+  - [Continuous Integration (CI)](#continuous-integration-ci)
+    - [GitHub Action](#github-action)
+    - [Travis CI](#travis-ci)
+    - [CircleCI](#circleci)
   - [GitLab CI](#gitlab-ci)
-  - [Authorization for Private Docker Registry](#authorization-for-private-docker-registry) 
-- [Checkpoint Details](CHECKPOINT.md)
-  - CIS's Docker Image Checkpoints
-  - Dockle Checkpoints for Docker
-  - Dockle Checkpoints for Linux
-- [Credits](#credits)
-- [Roadmap](#roadmap)
+  - [Authorization for Private Docker Registry](#authorization-for-private-docker-registry)
+    - [Docker Hub](#docker-hub)
+    - [Amazon ECR (Elastic Container Registry)](#amazon-ecr-elastic-container-registry)
+    - [GCR (Google Container Registry)](#gcr-google-container-registry)
+    - [Self Hosted Registry (BasicAuth)](#self-hosted-registry-basicauth)
+  - [Contributors](#contributors)
+    - [Code Contributors](#code-contributors)
+    - [Financial Contributors](#financial-contributors)
+      - [Individuals](#individuals)
+      - [Organizations](#organizations)
+- [License](#license)
+- [Author](#author)
 
 # Features
 
@@ -315,6 +326,12 @@ Simply specify an image name (and a tag).
 
 ```bash
 $ dockle goodwithtech/test-image:v1
+```
+
+If the image is multi-arch, select a platform explicitly (defaults to host):
+
+```bash
+$ dockle --platform linux/arm64 goodwithtech/test-image:v1
 ```
 
 <details>

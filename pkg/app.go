@@ -44,6 +44,11 @@ OPTIONS:
 			Name:  "input",
 			Usage: "input file path instead of image name",
 		},
+		cli.StringFlag{
+			Name:   "platform",
+			EnvVar: "DOCKLE_PLATFORM",
+			Usage:  "target platform (os/arch[/variant]) when fetching the image",
+		},
 		cli.StringSliceFlag{
 			Name:   "ignore, i",
 			EnvVar: "DOCKLE_IGNORES",
