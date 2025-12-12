@@ -3,7 +3,7 @@ module github.com/SpazioDati/dockle
 go 1.22.10
 
 require (
-	github.com/SpazioDati/deckoder v0.0.7-sd
+	github.com/SpazioDati/deckoder v0.0.8-sd
 	github.com/containers/image/v5 v5.33.0
 	github.com/d4l3k/messagediff v1.2.2-0.20180726183240-b9e99b2f9263
 	github.com/docker/go-connections v0.5.0
