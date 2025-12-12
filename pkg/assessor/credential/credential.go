@@ -6,7 +6,7 @@ import (
 	"path/filepath"
 	"unicode/utf8"
 
-	deckodertypes "github.com/goodwithtech/deckoder/types"
+	deckodertypes "github.com/SpazioDati/deckoder/types"
 
 	"github.com/SpazioDati/dockle/pkg/log"
 

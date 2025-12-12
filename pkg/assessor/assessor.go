@@ -3,7 +3,7 @@ package assessor
 import (
 	"os"
 
-	deckodertypes "github.com/goodwithtech/deckoder/types"
+	deckodertypes "github.com/SpazioDati/deckoder/types"
 
 	"github.com/SpazioDati/dockle/pkg/assessor/cache"
 	"github.com/SpazioDati/dockle/pkg/assessor/privilege"
