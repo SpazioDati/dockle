@@ -7,10 +7,10 @@ import (
 	"path/filepath"
 	"strings"
 
-	"github.com/goodwithtech/deckoder/analyzer"
-	"github.com/goodwithtech/deckoder/extractor"
-	"github.com/goodwithtech/deckoder/extractor/docker"
-	deckodertypes "github.com/goodwithtech/deckoder/types"
+	"github.com/SpazioDati/deckoder/analyzer"
+	"github.com/SpazioDati/deckoder/extractor"
+	"github.com/SpazioDati/deckoder/extractor/docker"
+	deckodertypes "github.com/SpazioDati/deckoder/types"
 
 	"github.com/SpazioDati/dockle/pkg/types"
 

@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"os"
 
-	deckodertypes "github.com/goodwithtech/deckoder/types"
+	deckodertypes "github.com/SpazioDati/deckoder/types"
 
 	"github.com/SpazioDati/dockle/pkg/types"
 )

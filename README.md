@@ -29,6 +29,8 @@ See [Installation](#installation) and [Common Examples](#common-examples)
 
 # TOC
 
+- [Checkpoints Comparison](#checkpoints-comparison)
+- [TOC](#toc)
 - [Features](#features)
 - [Comparison](#comparison)
 - [Installation](#installation)
@@ -342,6 +344,12 @@ Simply specify an image name (and a tag).
 
 ```bash
 $ dockle goodwithtech/test-image:v1
+```
+
+If the image is multi-arch, select a platform explicitly (defaults to host):
+
+```bash
+$ dockle --platform linux/arm64 goodwithtech/test-image:v1
 ```
 
 <details>
