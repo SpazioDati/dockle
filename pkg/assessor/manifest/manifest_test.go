@@ -225,6 +225,14 @@ func TestReducableApkAdd(t *testing.T) {
 			},
 			expected: false,
 		},
+		"UnReducableNoNetwork": {
+			cmdSlices: map[int][]string{
+				0: {
+					"apk", "add", "--no-network", "git",
+				},
+			},
+			expected: false,
+		},
 	}
 	for testname, v := range tests {
 		actual := reducableApkAdd(v.cmdSlices)
@@ -388,6 +396,39 @@ func TestReducableAptGetInstall(t *testing.T) {
 				},
 				1: {
 					"rm", "-r", "/var/lib/apt/lists",
+				},
+			},
+			expected: false,
+		},
+		"UnReducableDistClean": {
+			cmdSlices: map[int][]string{
+				0: {
+					"apt-get", "install", "-y", "git",
+				},
+				1: {
+					"apt-get", "dist-clean",
+				},
+			},
+			expected: false,
+		},
+		"UnReducableDistclean": {
+			cmdSlices: map[int][]string{
+				0: {
+					"apt-get", "install", "-y", "git",
+				},
+				1: {
+					"apt", "distclean",
+				},
+			},
+			expected: false,
+		},
+		"UnReducableDistCleanWithOptions": {
+			cmdSlices: map[int][]string{
+				0: {
+					"apt-get", "install", "-y", "git",
+				},
+				1: {
+					"apt-get", "-q", "-y", "dist-clean",
 				},
 			},
 			expected: false,

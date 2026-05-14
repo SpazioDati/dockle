@@ -42,38 +42,38 @@ See [Installation](#installation) and [Common Examples](#common-examples)
   - [Microsoft PowerShell 7](#microsoft-powershell-7)
   - [Binary](#binary)
   - [asdf](#asdf)
+  - [mise](#mise)
   - [From source](#from-source)
   - [Use Docker](#use-docker)
 - [Quick Start](#quick-start)
   - [Basic](#basic)
   - [Docker](#docker)
 - [Checkpoint Summary](#checkpoint-summary)
-  - [Level](#level)
-  - [Common Examples](#common-examples)
-    - [Scan an image](#scan-an-image)
-    - [Scan an image file](#scan-an-image-file)
-    - [Get or Save the results as JSON](#get-or-save-the-results-as-json)
-    - [Get or Save the results as SARIF](#get-or-save-the-results-as-sarif)
-    - [Specify exit code](#specify-exit-code)
-    - [Specify exit level](#specify-exit-level)
-    - [Ignore the specified checkpoints](#ignore-the-specified-checkpoints)
-    - [Accept suspicious `environment variables` / `files` / `file extensions`](#accept-suspicious-environment-variables--files--file-extensions)
-    - [Reject suspicious `environment variables` / `files` / `file extensions`](#reject-suspicious-environment-variables--files--file-extensions)
-  - [Continuous Integration (CI)](#continuous-integration-ci)
-    - [GitHub Action](#github-action)
-    - [Travis CI](#travis-ci)
-    - [CircleCI](#circleci)
+- [Common Examples](#common-examples)
+  - [Scan an image](#scan-an-image)
+  - [Scan an image file](#scan-an-image-file)
+  - [Get or Save the results as JSON](#get-or-save-the-results-as-json)
+  - [Get or Save the results as SARIF](#get-or-save-the-results-as-sarif)
+  - [Specify exit code](#specify-exit-code)
+  - [Specify exit level](#specify-exit-level)
+  - [Ignore the specified checkpoints](#ignore-the-specified-checkpoints)
+  - [Accept suspicious `environment variables` / `files` / `file extensions`](#accept-suspicious-environment-variables--files--file-extensions)
+  - [Reject suspicious `environment variables` / `files` / `file extensions`](#reject-suspicious-environment-variables--files--file-extensions)
+- [Continuous Integration](#continuous-integration-ci)
+  - [GitHub Action](#github-action)
+  - [Travis CI](#travis-ci)
+  - [CircleCI](#circleci)
   - [GitLab CI](#gitlab-ci)
   - [Authorization for Private Docker Registry](#authorization-for-private-docker-registry)
     - [Docker Hub](#docker-hub)
     - [Amazon ECR (Elastic Container Registry)](#amazon-ecr-elastic-container-registry)
     - [GCR (Google Container Registry)](#gcr-google-container-registry)
     - [Self Hosted Registry (BasicAuth)](#self-hosted-registry-basicauth)
-  - [Contributors](#contributors)
-    - [Code Contributors](#code-contributors)
-    - [Financial Contributors](#financial-contributors)
-      - [Individuals](#individuals)
-      - [Organizations](#organizations)
+- [Contributors](#contributors)
+  - [Code Contributors](#code-contributors)
+  - [Financial Contributors](#financial-contributors)
+    - [Individuals](#individuals)
+    - [Organizations](#organizations)
 - [License](#license)
 - [Author](#author)
 
@@ -179,6 +179,24 @@ asdf install dockle latest
 
 # Set a version globally (on your ~/.tool-versions file)
 asdf global dockle latest
+
+# Now dockle commands are available
+dockle --version
+```
+
+## mise
+
+You can install dockle with [mise](https://github.com/jdx/mise), the polyglot tool versions manager. With mise already installed, run these commands to install dockle:
+
+```bash
+# Show all installable versions
+mise ls-remote dockle
+
+# Install specific version
+mise install dockle@latest
+
+# Set a version globally
+mise use -g dockle@latest
 
 # Now dockle commands are available
 dockle --version
@@ -938,6 +956,13 @@ Support this project with your organization. Your logo will show up here with a 
 <a href="https://opencollective.com/dockle/organization/7/website"><img src="https://opencollective.com/dockle/organization/7/avatar.svg"></a>
 <a href="https://opencollective.com/dockle/organization/8/website"><img src="https://opencollective.com/dockle/organization/8/avatar.svg"></a>
 <a href="https://opencollective.com/dockle/organization/9/website"><img src="https://opencollective.com/dockle/organization/9/avatar.svg"></a>
+
+### OSS Program Supporters
+
+This project uses services provided through the following OSS programs.
+
+<a href="https://flatt.tech/oss/gmo/trampoline" target="_blank"><img src="https://flatt.tech/assets/images/badges/gmo-oss.svg" height="24px"/></a>
+<a href="https://github.com/1Password/for-open-source" target="_blank"><img src="https://img.shields.io/badge/1Password-OSS%20Program-0094F5?logo=1password&logoColor=white" height="24px"/></a>
 
 # License
 
